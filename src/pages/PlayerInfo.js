@@ -23,7 +23,7 @@ const TableComponent = () => {
   useEffect(() => {
     // Fetch player data for playerId 4
     axios
-      .get(`admin/players/all1`)
+      .get(`admin/players/all`)
       .then((response) => {
         const players = response.data;
         setPlayerData(players);
