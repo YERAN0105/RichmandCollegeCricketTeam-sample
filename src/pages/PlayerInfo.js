@@ -19,11 +19,12 @@ const TableComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const rowsPerPage = 5; // Number of rows per page
   const [currentPage, setCurrentPage] = useState(1);
+  const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     // Fetch player data for playerId 4
     axios
-      .get(`https://richmond-cricket.up.railway.app/api/admin/players/all`)
+      .get(`${API_URL}admin/players/all`)
       .then((response) => {
         const players = response.data;
         setPlayerData(players);
