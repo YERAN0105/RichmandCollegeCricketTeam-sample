@@ -31,12 +31,13 @@ const MatchDetails = () => {
   const rowsPerPage = 5; // Number of rows per page
   const [currentPage, setCurrentPage] = useState(1);
   const [isScorePopupOpen, setIsScorePopupOpen] = useState(false);
+  const API_URL = process.env.REACT_APP_API_URL;
 
 
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await axios.get("matches/all"); // Update with your API endpoint
+        const response = await axios.get(`${API_URL}matches/all`); // Update with your API endpoint
         setMatches(response.data);
         console.log(response)
       } catch (error) {
